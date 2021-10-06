@@ -39,7 +39,7 @@
                         Lomba ini cocok buat kamu yang ingin mencari keseruan sambil
                         mengasah kemampuan coding atau menjawab soal-soal logika.
                         Buruan daftar sekarang dengan klik tombol dibawah ini!</p>
-                    <a href="/register" class="py-3 px-5 font-semibold rounded-md bg-lime-400">Register</a>                              
+                    <a href="/daftar" class="py-3 px-5 font-semibold rounded-md bg-lime-400">Register</a>                              
             </div>    
 
         </div>

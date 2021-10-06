@@ -11,15 +11,8 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->RegisterModel = new RegisterModel();
-    }
-
-    public function home() 
-    {
-        $data = [
-            'team' => $this->RegisterModel->allDataTeam()
-        ];
-        return view('dashboard.index', $data);
-    }
+        $this->middleware('auth');
+    }    
 
     public function school() 
     {

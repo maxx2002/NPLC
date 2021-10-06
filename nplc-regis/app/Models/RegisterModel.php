@@ -10,6 +10,11 @@ class RegisterModel extends Model
 {
     use HasFactory;
 
+    public function getUser()
+    {
+        return DB::table('users')->get();
+    }
+
     public function allDataSchool() 
     {
         return DB::table('school')->get();

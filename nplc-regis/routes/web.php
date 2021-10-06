@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -18,17 +20,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/register', [RegisterController::class, 'add']);
+Route::get('/daftar', function () {
+    return view('daftar');
+});
 
-Route::post('/registered', function () {
+Route::post('/berhasil', function () {
     return view('done');
 });
-
-Route::get('/login', function () {
-    return view('dashboard.login');
-});
-
-Route::get('/dashboard', [RegisterController::class, 'home']);
 
 Route::get('/dashboard/school', [RegisterController::class, 'school']);
 
@@ -41,3 +39,7 @@ Route::get('/dashboard/team/delete/{id_team}', [RegisterController::class, 'dele
 Route::get('/dashboard/team/member/edit/{id_member}', [RegisterController::class, 'editMember']);
 Route::post('/dashboard/team/member/update/{id_member}', [RegisterController::class, 'updateMember']);
 
+
+Auth::routes();
+
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

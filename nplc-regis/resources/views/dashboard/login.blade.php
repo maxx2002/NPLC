@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/logonplcbulet.png" />
-    <title>9th NPLC - Register</title>
+    <title>9th NPLC - Login</title>
 </head>
 
 <body class="font-raleway">
@@ -28,16 +28,25 @@
 
         <div class="flex justify-center">
             <div class="w-96 mt-10 md:mt-28 mx-4 lg:mx-0">
-                <form action="/dashboard/index" method="POST">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="rounded-lg p-5" style="background: rgba(255, 255, 255, 0.6);">
                         <h1 class="font-bold text-lg md:text-2xl mb-2">Login</h1>
                             <div>
-                                <input class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="email"
-                                    placeholder="Email" style="background: rgba(255, 255, 255, 0.6);">
-                                <input class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="password"
-                                    placeholder="Password" style="background: rgba(255, 255, 255, 0.6);">
+                                <input class="border-2 border-black-500 rounded-md mt-2 w-full p-2 @error('email') is-invalid @enderror" 
+                                    type="email" name="email" id="email" placeholder="Email" style="background: rgba(255, 255, 255, 0.6);" value="{{ old('email') }}">
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                <input class="border-2 border-black-500 rounded-md mt-2 w-full p-2"
+                                    type="password" name="password" id="password" placeholder="Password" style="background: rgba(255, 255, 255, 0.6);">
                             </div>
-                    </div>
+                            <div class="mt-3">
+                                <input type="submit" value="Login" class="bg-black-400 text-white p-2 w-full rounded-md cursor-pointer">
+                            </div>
+                    </div>                    
                 </form>
             </div>
         </div>

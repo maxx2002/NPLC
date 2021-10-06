@@ -3,10 +3,18 @@
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    {{-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> --}}
     <div class="navbar-nav">
-      <div class="nav-item text-nowrap">
-        <a class="nav-link px-3" href="#">Log out</a>
+      <div class="nav-item text-nowrap">         
+        <button type="submit" class="btn btn-default btn-flat">
+          <form id="logout-form nav-link px-3" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+            <button type="submit" class="btn btn-default btn-flat text-white">Log out</button>
+          </form>
+        </button>
+        </a>
       </div>
     </div>
-  </header>
+</header>
+
+{{-- <a class="nav-link px-3" href="#">Logout</a> --}}
