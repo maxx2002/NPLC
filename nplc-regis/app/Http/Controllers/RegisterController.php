@@ -13,6 +13,14 @@ class RegisterController extends Controller
         $this->RegisterModel = new RegisterModel();
     }
 
+    public function home() 
+    {
+        $data = [
+            'team' => $this->RegisterModel->allDataTeam()
+        ];
+        return view('dashboard.index', $data);
+    }
+
     public function school() 
     {
         $data = [
@@ -97,21 +105,27 @@ class RegisterController extends Controller
     public function updateMember($id_member) 
     {
         Request()->validate([
-            'nama_tim' => 'required|min:1',
-            'nama_coach' => 'required|min:1',
-            'email_coach' => 'required|min:1',
-            'no_coach' => 'required|min:1',
+            'nama' => 'required|min:1',
+            'gender' => 'required|min:1',
+            'email' => 'required|min:1',
+            'alamat' => 'required|min:1',
+            'kota' => 'required|min:1',
+            'kode_pos' => 'required|min:1',
+            'no_wa' => 'required|min:1',
         ]);
 
         $data = [
-            'nama_tim' => Request()->nama_tim,
-            'nama_coach' => Request()->nama_coach,
-            'email_coach' => Request()->email_coach,
-            'no_coach' => Request()->no_coach,
+            'nama' => Request()->nama,
+            'gender' => Request()->gender,
+            'email' => Request()->email,
+            'alamat' => Request()->alamat,
+            'kota' => Request()->kota,
+            'kode_pos' => Request()->kode_pos,
+            'no_wa' => Request()->no_wa,
         ];
 
         $this->RegisterModel->editDataMember($id_member, $data);
-        return redirect()->route('member')->with('pesan', 'Data Berhasil Di Update!');
+        return redirect()->route('team')->with('pesan', 'Data Berhasil Di Update!');
     }
     
 }

@@ -28,9 +28,7 @@ Route::get('/login', function () {
     return view('dashboard.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
+Route::get('/dashboard', [RegisterController::class, 'home']);
 
 Route::get('/dashboard/school', [RegisterController::class, 'school']);
 
@@ -40,6 +38,6 @@ Route::get('/dashboard/team/edit/{id_team}', [RegisterController::class, 'editTe
 Route::post('/dashboard/team/update/{id_team}', [RegisterController::class, 'updateTeam']);
 Route::get('/dashboard/team/delete/{id_team}', [RegisterController::class, 'deleteTeam']);
 
-Route::get('/dashboard/team/{id_team}/edit/{id_member}', [RegisterController::class, 'editMember']);
-Route::post('/dashboard/team/{id_team}/update/{id_member}', [RegisterController::class, 'updateMember']);
+Route::get('/dashboard/team/member/edit/{id_member}', [RegisterController::class, 'editMember']);
+Route::post('/dashboard/team/member/update/{id_member}', [RegisterController::class, 'updateMember']);
 

@@ -32,7 +32,7 @@
             <td>{{ $data->kode_pos }}</td> 
             <td>{{ $data->no_wa }}</td> 
             <td>
-                <a href="" class="btn btn-sm btn-warning">Edit</a>                           
+                <a href="/dashboard/team/member/edit/{{ $data->id_member }}" class="btn btn-sm btn-warning">Edit</a>                           
             </td>               
         </tr>                
         @endforeach
