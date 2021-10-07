@@ -82,6 +82,15 @@ class RegisterController extends Controller
         return redirect()->route('team')->with('pesan', 'Data Berhasil Di Hapus!');
     }
 
+    public function verifiedTeam($id_tim) {
+        $data = [
+            'verified' => 'yes',            
+        ];
+
+        $this->RegisterModel->editDataTeam($id_tim, $data);
+        return redirect()->route('team')->with('pesan', 'Data Berhasil Di Update!');
+    }
+
     public function editMember($id_member) 
     {
         if (!$this->RegisterModel->detailMember($id_member)) {

@@ -35,6 +35,7 @@ Route::get('/dashboard/team/{id_team}', [RegisterController::class, 'detail'])->
 Route::get('/dashboard/team/edit/{id_team}', [RegisterController::class, 'editTeam']);
 Route::post('/dashboard/team/update/{id_team}', [RegisterController::class, 'updateTeam']);
 Route::get('/dashboard/team/delete/{id_team}', [RegisterController::class, 'deleteTeam']);
+Route::get('/dashboard/team/verified/{id_team}', [RegisterController::class, 'verifiedTeam']);
 
 Route::get('/dashboard/team/member/edit/{id_member}', [RegisterController::class, 'editMember']);
 Route::post('/dashboard/team/member/update/{id_member}', [RegisterController::class, 'updateMember']);

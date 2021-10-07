@@ -7,8 +7,12 @@
 </div>
 
 @php ($i = 0)
+@php ($j = 0)
 @foreach ($team as $item)
     @php ($i++)
+    @if ($item->verified === "yes")
+      @php ($j++)
+    @endif
 @endforeach
 
 <div class="row">
@@ -25,7 +29,7 @@
         <div class="card bg-light shadow-sm mt-2">
           <div class="card-body">
             <h5 class="card-title">Verified Teams</h5>
-            <h6 class="card-text">{{ $i }}</h6>
+            <h6 class="card-text">{{ $j }}</h6>
             <a href="#" class="btn btn-success">Blast Email</a>
           </div>
         </div>
