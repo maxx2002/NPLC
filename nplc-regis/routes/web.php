@@ -20,11 +20,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/daftar', function () {
+Route::get('/registrationform', function () {
     return view('daftar');
 });
 
-Route::post('/berhasil', function () {
+Route::post('/registrationsuccess', function () {
     return view('done');
 });
 

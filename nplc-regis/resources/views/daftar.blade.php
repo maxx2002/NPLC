@@ -32,7 +32,7 @@
 
         <div class="flex justify-center">
             <div class="lg:w-11/12 xl:w-5/6 mt-10 md:mt-28 mx-4 lg:mx-0">
-                <form action="/berhasil" method="POST">
+                <form action="/registrationsuccess" method="POST">
                     @csrf
                     <div class="md:grid grid-cols-2 gap-5">
                         <div class="rounded-lg p-5" style="background: rgba(255, 255, 255, 0.6);">
