@@ -27,7 +27,7 @@
         <img src="img/awan3.png" alt="" class="absolute w-1/3 top-14 md:top-28 right-0">
 
         <div class="flex items-center justify-center z-10">
-            <img src="img/tulisanregis.png" alt="" class="w-2/3 md:w-1/2 lg:w-1/3 mt-10 md:mt-14 z-10">
+            <img src="img/tulisanregis.svg" alt="" class="w-2/3 md:w-1/2 lg:w-1/3 mt-10 md:mt-14 z-10">
         </div>
 
         <div class="flex justify-center">

@@ -9,40 +9,78 @@
     <link rel="icon" href="img/logonplcbulet.png" />
     <title>9th NPLC - Home</title>
 </head>
-<body class="font-raleway text-white">
+<body class="font-raleway text-white overflow-x-hidden">       
+
     <div class="box relative">
 
-        <div class="flex mt-4 mr-4 z-10 justify-end">
-            <img src="img/logosu.png" alt="" class="w-14 h-14">
-            <img src="img/logouc.png" alt="" class="w-14 h-14 ml-2">
-        </div>
+        <img src="img/awan1.png" alt="" class="absolute w-1/3 top-6">
+        <img src="img/awan2.png" alt="" class="absolute w-1/3 top-44">
+        <img src="img/awan3.png" alt="" class="absolute w-1/3 top-28">
 
-        <img src="img/awan1.png" alt="" class="absolute w-1/3 top-6 cloud1">
-        <img src="img/awan2.png" alt="" class="absolute w-1/3 top-44 cloud2">
-        <img src="img/awan3.png" alt="" class="absolute w-1/3 top-28 cloud3">
+        <div class="z-10">
+            <div class="flex mt-4 mr-4 justify-end">
+                <img src="img/logosu.png" alt="" class="w-14 h-14">
+                <img src="img/logouc.png" alt="" class="w-14 h-14 ml-2">
+            </div>        
+    
+            <div class="flex justify-center mt-28">
+                <img class="w-1/3 ml-4" src="img/logonplc.png" alt="">
+            </div>
+            
+            <img src="img/forest.png" alt="">
+    
+            <div class="bg-green-500 relative">
+    
+                <img class="w-60 left-24 top-8 absolute" src="img/kayufoto.png" alt="">   
+                
+                <div class="flex justify-end mr-10">
+                    <img class="w-1/2" src="img/whatisnplc.svg" alt="">                    
+                </div>         
+                <div class="flex justify-end" style="margin-top: -30vw; margin-right: 13vw">
+                    <a href="/registrationform">
+                        <img class="w-52" src="img/regis.svg" alt="">  
+                    </a>                                     
+                </div> 
+                
+                <div class="ml-10 mt-6">
+                    <img class="w-2/3" src="img/sistem.svg" alt=""> 
+                </div>
+                <div class="ml-36" style="margin-top: -5vw">
+                    <a href="/pdf/ContohSoalNPLC.pdf" download>
+                        <img class="w-52" src="img/download.svg" alt=""> 
+                    </a>                    
+                </div>
 
-        <div class="flex justify-center mt-28">
-            <img class="w-1/3 ml-4 z-10" src="img/logonplc.png" alt="">
-        </div>
-        
-        <img src="img/forest.png" alt="">
+                <div class="flex justify-center mt-28">
+                    <img class="w-1/3" src="img/nplcover.svg" alt=""> 
+                </div>
+                <div class="flex justify-center">
+                    <div class="bg-brown-100 w-1/2 rounded-xl shadow-xl" style="height: 300px; margin-top:-1vw;">
 
-        <div class="bg-green-500 relative">
+                    </div>
+                </div>
 
-            <img class="w-60 ml-12 absolute" src="img/kayufoto.png" alt="">
-
-            <div class="flex justify-end mr-6 bg-cover bg-no-repeat w-1/2" style="background-image: url(img/kayu1.png); background-size: auto 100%;">
-                    <h1 class="text-3xl font-bold mb-3 mt-5 ml-5">WHAT IS NPLC</h1>
-                    <p class="mb-5 mt-15">Khusus untuk kamu yang masih SMA! Ayo daftarkan teammu dalam
-                        lomba bergengsi yang diadakan setaiap tahun oleh Student Union
-                        Information and Multimedia Technology (IMT) Universitas Ciputra.
-                        Lomba ini cocok buat kamu yang ingin mencari keseruan sambil
-                        mengasah kemampuan coding atau menjawab soal-soal logika.
-                        Buruan daftar sekarang dengan klik tombol dibawah ini!</p>
-                    <a href="/registrationform" class="py-3 px-5 font-semibold rounded-md bg-lime-400">Register</a>                              
-            </div>    
-
-        </div>
+                <div class="flex justify-center mt-20">
+                    <div class="grid grid-cols-2 gap-20 w-2/3 flex items-center">
+                        <div>
+                            <img src="img/pohon.png" alt="">
+                        </div>
+                        <div>
+                            <h1 class="text-4xl font-bold">CONNECT WITH US</h1>
+                            <div class="flex items-center mt-10">
+                                <img class="w-14" src="img/ig.png" alt="">
+                                <p class="text-2xl ml-3 font-bold">ucnplc</p>
+                            </div>
+                            <div class="flex items-center mt-5">
+                                <img class="w-14" src="img/line.png" alt="">
+                                <p class="text-2xl ml-3 font-bold">achmadrijalu</p>
+                            </div>                                                      
+                        </div>
+                    </div>
+                </div>
+                
+            </div> 
+        </div>        
     </div>
 </body>
 </html>
