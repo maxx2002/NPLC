@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DaftarController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -20,13 +21,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/registrationform', function () {
+Route::get('/registrationform', function (){
     return view('daftar');
-});
+})->name('registrationform');
 
-Route::post('/registrationsuccess', function () {
-    return view('done');
-});
+Route::post('/registrationsuccess', [DaftarController::class, 'add']);
 
 Route::get('/dashboard/school', [RegisterController::class, 'school']);
 
@@ -40,7 +39,9 @@ Route::get('/dashboard/team/verified/{id_team}', [RegisterController::class, 've
 Route::get('/dashboard/team/member/edit/{id_member}', [RegisterController::class, 'editMember']);
 Route::post('/dashboard/team/member/update/{id_member}', [RegisterController::class, 'updateMember']);
 
-
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//email
+Route::post('/email', [MailController::class, 'sendEmail']);

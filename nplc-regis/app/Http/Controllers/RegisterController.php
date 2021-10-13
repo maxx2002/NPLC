@@ -63,6 +63,8 @@ class RegisterController extends Controller
             'nama_coach' => 'required|min:1',
             'email_coach' => 'required|min:1',
             'no_coach' => 'required|min:1',
+            'kategori' => 'required|min:1',
+            'region' => 'required|min:1',
         ]);
 
         $data = [
@@ -70,6 +72,8 @@ class RegisterController extends Controller
             'nama_coach' => Request()->nama_coach,
             'email_coach' => Request()->email_coach,
             'no_coach' => Request()->no_coach,
+            'kategori' => Request()->kategori,
+            'region' => Request()->region,
         ];
 
         $this->RegisterModel->editDataTeam($id_tim, $data);
@@ -124,10 +128,11 @@ class RegisterController extends Controller
             'kota' => Request()->kota,
             'kode_pos' => Request()->kode_pos,
             'no_wa' => Request()->no_wa,
+            'id_tim' => Request()->id_tim
         ];
 
         $this->RegisterModel->editDataMember($id_member, $data);
-        return redirect()->route('team')->with('pesan', 'Data Berhasil Di Update!');
+        return redirect()->route('member', ['id_team' => $data['id_tim']])->with('pesan', 'Data Berhasil Di Update!');
     }
     
 }

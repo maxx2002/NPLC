@@ -73,6 +73,15 @@
                         @enderror
                     </div>
                 </div>
+                <div class="form-group mt-3 visually-hidden">
+                    <label for="">id Team</label>
+                    <input type="text" class="form-control @error('no_wa') is-invalid @enderror" name="id_tim" value="{{ $members->id_tim }}">
+                    <div class="invalid-feedback">
+                        @error('no_wa')
+                            {{ $message }}
+                        @enderror
+                    </div>
+                </div>
 
                 <div class="form-group mt-3">
                     <input type="submit" value="Save" class="btn btn-dark">

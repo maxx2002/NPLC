@@ -17,14 +17,14 @@ class RegisterModel extends Model
 
     public function allDataSchool() 
     {
-        return DB::table('school')->get();
+        return DB::table('school')->paginate(10);
     }
 
     public function allDataTeam() 
     {
         return DB::table('team')
         ->leftJoin('school', 'school.id_sekolah', '=', 'team.id_tim')
-        ->get();
+        ->paginate(10);
     }
 
     public function detailTeam($id_tim) 
@@ -50,10 +50,41 @@ class RegisterModel extends Model
     public function deleteDataTeam($id_tim)
     {
         DB::table('team')->where('id_tim', $id_tim)->delete();
+        DB::table('member')->where('id_tim', $id_tim)->delete();
     }
 
     public function editDataMember($id_member, $data)
     {
         DB::table('member')->where('id_member', $id_member)->update($data);
+    }
+
+    public function addDataMember($data)
+    {
+        DB::table('member')->insert($data);
+    }
+
+    public function addDataSchool($data)
+    {
+        DB::table('school')->insert($data);
+    }
+
+    public function addDataTeam($data)
+    {
+        DB::table('team')->insert($data);
+    }
+
+    public function specifiedSchool($data)
+    {
+        return DB::table('school')->select('id_sekolah')->where('nama_sekolah', $data)->first();
+    }
+
+    public function lastIDSchool()
+    {
+        return DB::table('school')->latest('id_sekolah')->first();
+    }
+
+    public function lastIDTeam()
+    {
+        return DB::table('team')->latest('id_tim')->first();
     }
 }

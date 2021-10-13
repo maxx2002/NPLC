@@ -25,17 +25,19 @@
         <img src="img/awan3.png" alt="" class="absolute w-1/3 top-14 md:top-28 right-0">
 
         <div class="flex items-center justify-center mt-24">
-            <h1 class="text-2xl md:text-5xl z-10">Thank You For Registering</h1>            
+            <h1 class="text-2xl md:text-5xl z-10 font-bold">Thank You For Registering</h1>            
         </div>        
             <div class="flex items-center justify-center z-10 mt-4">
             <h2 class="text-lg md:text-2xl">Please Check Your Email</h2>
         </div>
         
-        <div class="bg-no-repeat mx-auto w-52 mt-10" style="background-image: url(img/kayu5.png); background-size: auto 100%;">
-            <a href="index.html"><p class="text-center text-lg md:text-2xl py-3 px-5 hover:text-white">Back</p></a>
+        <div class="bg-no-repeat mx-auto w-36 md:w-52 mt-10">
+            <a href="/">
+                <img src="img/back.svg" alt="">
+            </a>
         </div>
         
-        <img src="img/forest.png" alt="" class="mt-44 md:mt-0">
+        <img src="img/forest.png" alt="" class="mt-60 md:mt-0">
     </div>
 </body>
 </html>

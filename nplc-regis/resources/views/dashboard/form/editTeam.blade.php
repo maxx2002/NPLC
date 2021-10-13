@@ -46,6 +46,24 @@
                         @enderror
                     </div>
                 </div>
+                <div class="form-group mt-3">
+                    <label for="">Kategori</label>
+                    <input type="text" class="form-control @error('kategori') is-invalid @enderror" name="kategori" value="{{ $team->kategori }}">
+                    <div class="invalid-feedback">
+                        @error('kategori')
+                            {{ $message }}
+                        @enderror
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="">Region</label>
+                    <input type="text" class="form-control @error('region') is-invalid @enderror" name="region" value="{{ $team->region }}">
+                    <div class="invalid-feedback">
+                        @error('region')
+                            {{ $message }}
+                        @enderror
+                    </div>
+                </div>
 
                 <div class="form-group mt-3">
                     <input type="submit" value="Save" class="btn btn-dark">

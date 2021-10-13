@@ -2,7 +2,7 @@
 
 @section('container')
 
-<h1 class="mt-4">Daftar Tim</h1>
+<h1 class="mt-4 mb-2">Daftar Tim</h1>
 
 @if(session('pesan'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -14,27 +14,30 @@
 <table class="table table-bordered mt-4">
     <thead>
         <tr>
-            <th>No</th>
+            <th>ID</th>
             <th>Nama Tim</th>
             <th>Asal Sekolah</th>
             <th>Nama Coach</th>
             <th>Email Coach</th>
             <th>No Coach</th>
-            <th>Verified</th>
+            <th>Kategori</th>
+            <th>Region</th>
+            <th>Verified</th>            
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        @php ($no=1)
         @foreach($team as $data)
         
         <tr>
-            <td>{{ $no++ }}</td>
+            <td>{{ $data->id_tim }}</td>
             <td>{{ $data->nama_tim }}</td>
             <td>{{ $data->nama_sekolah }}</td>
             <td>{{ $data->nama_coach }}</td>
             <td>{{ $data->email_coach }}</td>            
             <td>{{ $data->no_coach }}</td> 
+            <td>{{ $data->kategori }}</td>
+            <td>{{ $data->region }}</td>
             <td>{{ $data->verified }}</td>
             <td>
                 <a href="/dashboard/team/{{ $data->id_tim }}" class="btn btn-sm btn-success">Details</a>  
@@ -46,6 +49,10 @@
         @endforeach
     </tbody>
 </table>
+
+<div class="d-flex justify-content-end">
+    {{ $team->links() }}
+</div>
 
 @foreach ($team as $data)   
     <div class="modal modal-danger fade" id="delete{{ $data->id_tim }}" tabindex="-1">
