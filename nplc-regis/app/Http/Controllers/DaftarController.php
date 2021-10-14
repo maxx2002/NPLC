@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Models\RegisterModel;
 
 class DaftarController extends Controller
@@ -13,9 +15,7 @@ class DaftarController extends Controller
     }    
     
     public function add()
-    {
-        $namasekolah = Request()-> nama_sekolah;
-        
+    {        
         Request()->validate([
             'kategori' => 'required|min:1',
             'region' => 'required|min:1',
@@ -55,10 +55,10 @@ class DaftarController extends Controller
         }        
         
         $datasekolah = [
-            'nama_sekolah'=> $namasekolah,
-            'alamat_sekolah'=> Request()-> alamat_sekolah,
-            'kota_sekolah'=> Request()-> kota_sekolah,
-            'no_sekolah'=> Request()-> no_sekolah
+            'nama_sekolah' => Request()->nama_sekolah,
+            'alamat_sekolah'=> Request()->alamat_sekolah,
+            'kota_sekolah'=> Request()->kota_sekolah,
+            'no_sekolah'=> Request()->no_sekolah
         ];               
         
         $idteam = $this->RegisterModel->lastIDTeam();
@@ -71,51 +71,118 @@ class DaftarController extends Controller
         $datamember = [
             [
                 'id_tim' => $idtim,
-                'nama'=> Request()-> leadernamalengkap,
-                'gender'=> Request()-> leadergender,
-                'email'=> Request()-> leaderemail,
-                'alamat'=> Request()-> leaderalamat,
-                'kota'=> Request()-> leaderkota,
-                'kode_pos'=> Request()-> leaderkodepos,
-                'no_wa'=> Request()-> leadernomorwa
+                'nama'=> Request()->leadernamalengkap,
+                'gender'=> Request()->leadergender,
+                'email'=> Request()->leaderemail,
+                'alamat'=> Request()->leaderalamat,
+                'kota'=> Request()->leaderkota,
+                'kode_pos'=> Request()->leaderkodepos,
+                'no_wa'=> Request()->leadernomorwa
             ],
 
             [
                 'id_tim' => $idtim,
-                'nama'=> Request()-> firstnamalengkap,
-                'gender'=> Request()-> firstgender,
-                'email'=> Request()-> firstemail,
-                'alamat'=> Request()-> firstalamat,
-                'kota'=> Request()-> firstkota,
-                'kode_pos'=> Request()-> firstkodepos,
-                'no_wa'=> Request()-> firstnomorwa
+                'nama'=> Request()->firstnamalengkap,
+                'gender'=> Request()->firstgender,
+                'email'=> Request()->firstemail,
+                'alamat'=> Request()->firstalamat,
+                'kota'=> Request()->firstkota,
+                'kode_pos'=> Request()->firstkodepos,
+                'no_wa'=> Request()->firstnomorwa
             ],
 
             [
                 'id_tim' => $idtim,
-                'nama'=> Request()-> secondnamalengkap,
-                'gender'=> Request()-> secondgender,
-                'email'=> Request()-> secondemail,
-                'alamat'=> Request()-> secondalamat,
-                'kota'=> Request()-> secondkota,
-                'kode_pos'=> Request()-> secondkodepos,
-                'no_wa'=> Request()-> secondnomorwa
+                'nama'=> Request()->secondnamalengkap,
+                'gender'=> Request()->secondgender,
+                'email'=> Request()->secondemail,
+                'alamat'=> Request()->secondalamat,
+                'kota'=> Request()->secondkota,
+                'kode_pos'=> Request()->secondkodepos,
+                'no_wa'=> Request()->secondnomorwa
             ]
         ];
         
         $datatim = [
             'id_sekolah'=> $idsekolah,
-            'kategori'=> Request()-> kategori,
-            'region'=> Request()-> region,
-            'nama_tim'=> Request()-> nama_tim,
-            'nama_coach'=> Request()-> nama_coach,
-            'no_coach'=> Request()-> no_coach,
-            'email_coach'=> Request()-> email_coach
+            'kategori'=> Request()->kategori,
+            'region'=> Request()->region,
+            'nama_tim'=> Request()->nama_tim,
+            'nama_coach'=> Request()->nama_coach,
+            'no_coach'=> Request()->no_coach,
+            'email_coach'=> Request()->email_coach
         ];
 
         $this->RegisterModel->addDataSchool($datasekolah); 
         $this->RegisterModel->addDataMember($datamember);
         $this->RegisterModel->addDataTeam($datatim);
+
+        //email
+        $team = [
+            'id_tim' => $idtim,
+            'kategori'=> Request()->kategori,
+            'region'=> Request()->region,
+            'nama_tim'=> Request()->nama_tim,
+            'nama_coach'=> Request()->nama_coach,
+            'no_coach'=> Request()->no_coach,
+            'email_coach'=> Request()->email_coach
+        ];
+
+        $leader = [
+            'nama'=> Request()->leadernamalengkap,
+            'gender'=> Request()->leadergender,
+            'email'=> Request()->leaderemail,
+            'alamat'=> Request()->leaderalamat,
+            'kota'=> Request()->leaderkota,
+            'kode_pos'=> Request()->leaderkodepos,
+            'no_wa'=> Request()->leadernomorwa
+        ];
+
+        $member1 = [
+            'nama'=> Request()->firstnamalengkap,
+            'gender'=> Request()->firstgender,
+            'email'=> Request()->firstemail,
+            'alamat'=> Request()->firstalamat,
+            'kota'=> Request()->firstkota,
+            'kode_pos'=> Request()->firstkodepos,
+            'no_wa'=> Request()->firstnomorwa
+        ];
+
+        $member2 = [
+            'nama'=> Request()->secondnamalengkap,
+            'gender'=> Request()->secondgender,
+            'email'=> Request()->secondemail,
+            'alamat'=> Request()->secondalamat,
+            'kota'=> Request()->secondkota,
+            'kode_pos'=> Request()->secondkodepos,
+            'no_wa'=> Request()->secondnomorwa
+        ];
+
+        $school = [
+            'nama_sekolah' => Request()->nama_sekolah,
+            'alamat_sekolah'=> Request()->alamat_sekolah,
+            'kota_sekolah'=> Request()->kota_sekolah,
+            'no_sekolah'=> Request()->no_sekolah
+        ];
+
+        Mail::to(Request()->leaderemail)->send(new SendEmail($team, $school, $leader, $member1, $member2));
+
         return view('done');
     }
+
+    // public function sendEmail()
+    // {
+    //     $datatim = [
+    //         'nama_tim' => 'yeee'
+    //     ];
+    //     $datamember = [
+    //         'nama' => 'max'
+    //     ];
+    //     $datasekolah = [
+    //         'nama_sekolah' => 'ciputra'
+    //     ];
+
+    //     Mail::to('maximusaureliusw@gmail.com')->send(new SendEmail($datatim, $datamember, $datasekolah));
+    //     return new SendEmail($datatim, $datamember, $datasekolah);
+    // }
 }

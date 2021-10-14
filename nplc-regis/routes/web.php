@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DaftarController;
-use App\Http\Controllers\MailController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -44,4 +43,4 @@ Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //email
-Route::post('/email', [MailController::class, 'sendEmail']);
+Route::get('/email', [DaftarController::class, 'sendEmail']);
