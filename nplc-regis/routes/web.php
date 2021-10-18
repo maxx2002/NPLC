@@ -38,6 +38,8 @@ Route::get('/dashboard/team/verified/{id_team}', [RegisterController::class, 've
 Route::get('/dashboard/team/member/edit/{id_member}', [RegisterController::class, 'editMember']);
 Route::post('/dashboard/team/member/update/{id_member}', [RegisterController::class, 'updateMember']);
 
+Route::get('/dashboard/blast', [RegisterController::class, 'blast']);
+
 Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

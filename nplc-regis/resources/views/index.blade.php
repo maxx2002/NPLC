@@ -10,7 +10,20 @@
     <link rel="icon" href="img/logonplcbulet.png" />
     <title>9th NPLC - Home</title>
 </head>
-<body class="font-raleway text-white overflow-x-hidden">       
+<body class="font-raleway text-white overflow-x-hidden"> 
+    
+    <div class="modal rounded-lg bg-green-400 p-5 md:p-10 relative w-5/6 md:w-2/3 xl:w-1/2">
+        <button onclick="toggle()" class="absolute right-5 top-5 text-2xl hidden md:block">X</button>
+        <button onclick="toggle()" class="absolute right-5 top-5 text-lg md:hidden">X</button>
+        <div class="isi">
+            <h1 class="text-2xl font-bold">Guide Book</h1>
+            <p>Klik tombol dibawah untuk mengunduh guidebook sesuai kategori yang kamu minati</p>
+            <div class="flex mt-5">
+                <a class="bg-brown-200 rounded-md p-3 border-2 border-brown-200 hover:border-white" href="/pdf/ContohSoalNPLC.pdf" download>Kategori 1</a>
+                <a class="bg-brown-300 rounded-md p-3 border-2 border-brown-300 hover:border-white ml-3" href="/pdf/ContohSoalNPLC.pdf" download>Kategori 2</a>
+            </div>            
+        </div>
+    </div>
 
     <div class="box relative">
 
@@ -48,7 +61,7 @@
                 <img class="w-full md:w-3/4 lg:w-2/3" src="img/sistem.svg" alt=""> 
             </div>
             <div class="ml-16 md:ml-24 lg:ml-36" style="margin-top: -5vw">
-                <a href="/pdf/ContohSoalNPLC.pdf" download>
+                <a onclick="toggle()">
                     <img class="w-28 lg:w-40 xl:w-52" src="img/download.svg" alt=""> 
                 </a>                    
             </div>

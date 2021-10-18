@@ -134,5 +134,10 @@ class RegisterController extends Controller
         $this->RegisterModel->editDataMember($id_member, $data);
         return redirect()->route('member', ['id_team' => $data['id_tim']])->with('pesan', 'Data Berhasil Di Update!');
     }
+
+    public function blast()
+    {
+        return view('dashboard/blast');
+    }
     
 }

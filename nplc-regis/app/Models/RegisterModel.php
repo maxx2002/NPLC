@@ -27,6 +27,11 @@ class RegisterModel extends Model
         ->paginate(10);
     }
 
+    public function allVerifiedTeam() 
+    {
+        return DB::table('team')->get();
+    }
+
     public function detailTeam($id_tim) 
     {
         return DB::table('team')->where('id_tim', $id_tim)->first();

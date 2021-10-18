@@ -11,7 +11,7 @@ class SendEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $team, $school, $leader, $member1, $member2;
+    public $team, $school, $leader, $member1, $member2, $count;
 
     /**
      * Create a new message instance.
@@ -19,13 +19,14 @@ class SendEmail extends Mailable
      * @return void
      */
 
-    public function __construct($team, $school, $leader, $member1, $member2)
+    public function __construct($team, $school, $leader, $member1, $member2, $count)
     {
         $this->team = $team;        
         $this->school = $school;
         $this->leader = $leader;
         $this->member1 = $member1;
         $this->member2 = $member2;
+        $this->count = $count;
     }
 
     /**

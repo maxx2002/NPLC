@@ -30,7 +30,7 @@
           <div class="card-body">
             <h5 class="card-title">Verified Teams</h5>
             <h6 class="card-text">{{ $j }}</h6>
-            <a href="#" class="btn btn-success">Blast Email</a>
+            <a href="/dashboard/team" class="btn btn-success">View Teams</a>
           </div>
         </div>
     </div>

@@ -4,6 +4,17 @@
 
 Thank you for registering as a participant on the 9th NPLC
 
+@php($i = 1)
+@foreach ($count as $item)
+    @if ($item->verified == 'yes')
+        @php($i++)
+    @endif
+@endforeach
+
+@if ($i <= 50)
+    Congratulations, your registration fee is free
+@endif
+
 @component('mail::table')
 | Competition Category     | Region               
 | :----------------------: | :-------------------: 

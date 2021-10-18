@@ -1,3 +1,4 @@
+// slider
 const slide1 = document.querySelector("#slide1");
 const slide2 = document.querySelector("#slide2");
 const slide3 = document.querySelector("#slide3");
@@ -23,4 +24,10 @@ var indexValue = 1;
       }
 
       img[indexValue-1].style.display = "block";
+}
+
+//modal
+function toggle() {
+  var popup = document.querySelector(".modal");
+  popup.classList.toggle('active');
 }

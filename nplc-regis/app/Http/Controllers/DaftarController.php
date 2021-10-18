@@ -165,24 +165,64 @@ class DaftarController extends Controller
             'no_sekolah'=> Request()->no_sekolah
         ];
 
-        Mail::to(Request()->leaderemail)->send(new SendEmail($team, $school, $leader, $member1, $member2));
+        $count = $this->RegisterModel->allVerifiedTeam();
+        Mail::to(Request()->leaderemail)->send(new SendEmail($team, $school, $leader, $member1, $member2, $count));
 
         return view('done');
     }
 
-    // public function sendEmail()
-    // {
-    //     $datatim = [
-    //         'nama_tim' => 'yeee'
-    //     ];
-    //     $datamember = [
-    //         'nama' => 'max'
-    //     ];
-    //     $datasekolah = [
-    //         'nama_sekolah' => 'ciputra'
-    //     ];
+//     public function sendEmail()
+//     {
+//         $team = [
+//             'id_tim' => '1',
+//             'kategori'=> 'Request()->kategori',
+//             'region'=> 'Request()->region',
+//             'nama_tim'=> 'Request()->nama_tim',
+//             'nama_coach'=> 'Request()->nama_coach',
+//             'no_coach'=> 'Request()->no_coach',
+//             'email_coach'=> 'Request()->email_coach'
+//         ];
 
-    //     Mail::to('maximusaureliusw@gmail.com')->send(new SendEmail($datatim, $datamember, $datasekolah));
-    //     return new SendEmail($datatim, $datamember, $datasekolah);
-    // }
+//         $leader = [
+//             'nama'=> 'Request()->leadernamalengkap',
+//             'gender'=> 'Request()->leadergender',
+//             'email'=> 'Request()->leaderemail',
+//             'alamat'=> 'Request()->leaderalamat',
+//             'kota'=> 'Request()->leaderkota',
+//             'kode_pos'=> 'Request()->leaderkodepos',
+//             'no_wa'=> 'Request()->leadernomorwa'
+//         ];
+
+//         $member1 = [
+//             'nama'=> 'Request()->firstnamalengkap',
+//             'gender'=> 'Request()->firstgender',
+//             'email'=> 'Request()->firstemail',
+//             'alamat'=> 'Request()->firstalamat',
+//             'kota'=> 'Request()->firstkota',
+//             'kode_pos'=> 'Request()->firstkodepos',
+//             'no_wa'=> 'Request()->firstnomorwa'
+//         ];
+
+//         $member2 = [
+//             'nama'=> 'Request()->secondnamalengkap',
+//             'gender'=> 'Request()->secondgender',
+//             'email'=> 'Request()->secondemail',
+//             'alamat'=> 'Request()->secondalamat',
+//             'kota'=> 'Request()->secondkota',
+//             'kode_pos'=> 'Request()->secondkodepos',
+//             'no_wa'=> 'Request()->secondnomorwa'
+//         ];
+
+//         $school = [
+//             'nama_sekolah' => 'Request()->nama_sekolah',
+//             'alamat_sekolah'=> 'Request()->alamat_sekolah',
+//             'kota_sekolah'=> 'Request()->kota_sekolah',
+//             'no_sekolah'=> 'Request()->no_sekolah'
+//         ];
+
+//         $count = $this->RegisterModel->allVerifiedTeam();
+
+//         Mail::to('maximusaureliusw@gmail.com')->send(new SendEmail($team, $school, $leader, $member1, $member2, $count));
+//         return new SendEmail($team, $school, $leader, $member1, $member2, $count);
+//     }
 }

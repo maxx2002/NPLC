@@ -6,6 +6,28 @@ body {
     overflow-x: hidden;
 }
 
+/* modal */
+.modal {
+  z-index: 999999;
+  position: fixed;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  box-shadow: 0 5px 30px rgba(0,0,0,.30);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+.isi {
+  height: 100%;
+}
+.active {
+  top: 0%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
 /* slider */
 .swiper-container {
     display: flex;
