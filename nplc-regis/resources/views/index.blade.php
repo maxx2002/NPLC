@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="img/logonplcbulet.png" />
+    <link rel="icon" href="{{ asset('img/logonplcbulet.png') }}" />
     <title>9th NPLC - Home</title>
 </head>
 <body class="font-raleway text-white overflow-x-hidden"> 
@@ -19,8 +19,8 @@
             <h1 class="text-2xl font-bold">Guide Book</h1>
             <p>Klik tombol dibawah untuk mengunduh guidebook sesuai kategori yang kamu minati</p>
             <div class="flex mt-5">
-                <a class="bg-brown-200 rounded-md p-3 border-2 border-brown-200 hover:border-white" href="/pdf/ContohSoalNPLC.pdf" download>Kategori 1</a>
-                <a class="bg-brown-300 rounded-md p-3 border-2 border-brown-300 hover:border-white ml-3" href="/pdf/ContohSoalNPLC.pdf" download>Kategori 2</a>
+                <a class="bg-brown-200 rounded-md p-3 border-2 border-brown-200 hover:border-white" href="/pdf/GuidebookKat1NPLC.pdf" download>Kategori 1</a>
+                <a class="bg-brown-300 rounded-md p-3 border-2 border-brown-300 hover:border-white ml-3" href="/pdf/GuidebookKat2NPLC.pdf" download>Kategori 2</a>
             </div>            
         </div>
     </div>
@@ -38,7 +38,7 @@
             </div>        
     
             <div class="flex justify-center mt-10 md:mt-20 lg:mt-28">
-                <img class="w-1/2 md:w-1/3 ml-4" src="img/logonplc.png" alt="">
+                <img class="w-1/2 md:w-1/3 ml-4 z-10" src="img/logonplc.png" alt="">
             </div>
             
             <img src="img/forest.png" alt="">              
@@ -51,7 +51,7 @@
             <div class="flex justify-center md:justify-end md:mr-5 lg:mr-10">
                 <img class="w-11/12 md:w-2/3 lg:w-1/2" src="img/whatisnplc.svg" alt="">                    
             </div>         
-            <div class="flex justify-end mr-24 lg:mr-36 xl:mr-44 regis">
+            <div class="flex justify-end mr-16 md:mr-24 lg:mr-36 xl:mr-44 regis">
                 <a href="/registrationform">
                     <img class="w-28 md:w-32 lg:w-40 xl:w-52" src="img/regis.svg" alt="">  
                 </a>                                     
@@ -60,9 +60,9 @@
             <div class="md:ml-10 mt-52 md:mt-6">
                 <img class="w-full md:w-3/4 lg:w-2/3" src="img/sistem.svg" alt=""> 
             </div>
-            <div class="ml-16 md:ml-24 lg:ml-36" style="margin-top: -5vw">
+            <div class="ml-12 md:ml-24 lg:ml-36" style="margin-top: -5vw">
                 <a onclick="toggle()">
-                    <img class="w-28 lg:w-40 xl:w-52" src="img/download.svg" alt=""> 
+                    <img class="w-24 md:w-28 lg:w-40 xl:w-52" src="img/download.svg" alt=""> 
                 </a>                    
             </div>
 
@@ -76,8 +76,8 @@
                     </div>
                     <div class="content overflow-hidden">                        
                         <div class="w-52 md:w-96 h-40 md:h-60">
-                            <img class="w-96 h-80 rounded-lg border-4 border-brown-500 swiper-slide" src="img/slide1.jpg" alt=""> 
-                            <img class="w-96 h-80 rounded-lg border-4 border-brown-500 swiper-slide" src="img/slide2.jpg" alt=""> 
+                            <img class="w-96 h-80 rounded-lg border-4 border-brown-500 swiper-slide" src="img/slide1.JPG" alt=""> 
+                            <img class="w-96 h-80 rounded-lg border-4 border-brown-500 swiper-slide" src="img/slide2.JPG" alt=""> 
                             <img class="w-96 h-80 rounded-lg border-4 border-brown-500 swiper-slide" src="img/slide3.png" alt="">            
                             <img class="w-96 h-80 rounded-lg border-4 border-brown-500 swiper-slide" src="img/slide4.png" alt=""> 
                         </div>  
@@ -94,21 +94,21 @@
                         <img src="img/pohon.png" alt="" class="mb-0">
                     </div>
                     <div>
-                        <h1 class="lg:text-2xl xl:text-4xl font-bold">CONNECT WITH US</h1>
-                        <div class="flex items-center mt-4 md:mt-5">
+                        <h1 class="text-sm lg:text-2xl xl:text-4xl font-bold">CONNECT WITH US</h1>
+                        <div class="flex items-center mt-2 md:mt-5">
                             <a href="https://www.instagram.com/ucnplc/?hl=en" target="_blank">
-                                <img class="w-5 md:w-8 lg:w-14" src="img/ig.png" alt="">                                                                   
+                                <img class="w-3 md:w-8 lg:w-14" src="img/ig.png" alt="">                                                                   
                             </a>    
                             <a href="https://www.instagram.com/ucnplc/?hl=en" target="_blank">
-                                <p class="text-sm md:text-xl xl:text-2xl ml-2 md:ml-3 font-bold">ucnplc</p>                                                                   
+                                <p class="text-xs md:text-xl xl:text-2xl ml-1 md:ml-3 md:font-bold">ucnplc</p>                                                                   
                             </a>                                                          
                         </div>
-                        <div class="flex items-center mt-3 md:mt-5">
-                            <img class="w-5 md:w-8 lg:w-14" src="img/line.png" alt="">
-                            <p class="text-sm md:text-xl xl:text-2xl ml-2 md:ml-3 font-bold">achmadrijalu</p>
+                        <div class="flex items-center mt-1 md:mt-5">
+                            <img class="w-3 md:w-8 lg:w-14" src="img/line.png" alt="">
+                            <p class="text-xs md:text-xl xl:text-2xl ml-1 md:ml-3 md:font-bold">achmadrijalu</p>
                         </div>
                         <div>
-                            <p class="mt-3 md:mt-6 text-sm md:text-lg">Sponsored By:</p>   
+                            <p class="mt-3 md:mt-6 text-xs md:text-lg">Sponsored By:</p>   
                             <div class="mt-1 md:mt-2 flex">
                                 <div class="w-40 h-5 md:h-8 xl:h-12 flex items-center justify-center p-1 md:p-3 bg-white rounded-sm md:rounded-md">
                                     <img src="img/cloudrayalogo.png" alt="">

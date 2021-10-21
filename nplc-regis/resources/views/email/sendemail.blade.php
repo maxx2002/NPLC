@@ -1,5 +1,5 @@
 @component('mail::message')
-# Dear Team Members of, {{ $team['nama_tim'] }}<br>
+# Dear Team Members of {{ $team['nama_tim'] }}<br>
 # Your team id is {{ $team['id_tim'] }}
 
 Thank you for registering as a participant on the 9th NPLC

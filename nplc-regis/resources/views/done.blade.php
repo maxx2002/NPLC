@@ -28,7 +28,7 @@
             <h1 class="text-2xl md:text-5xl z-10 font-bold">Thank You For Registering</h1>            
         </div>        
             <div class="flex items-center justify-center z-10 mt-4">
-            <h2 class="text-lg md:text-2xl">Please Check Your Email</h2>
+            <h2 class="text-lg md:text-2xl">Please Check Your Email to Verify</h2>
         </div>
         
         <div class="bg-no-repeat mx-auto w-36 md:w-52 mt-10">

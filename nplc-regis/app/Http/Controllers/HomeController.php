@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
-            'team' => $this->RegisterModel->allDataTeam()
+            'team' => $this->RegisterModel->allVerifiedTeam()
         ];
         return view('dashboard.index', $data);
     }

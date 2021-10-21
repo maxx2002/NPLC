@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="img/logonplcbulet.png" />
     <title>9th NPLC - Register</title>
 </head>
@@ -130,49 +130,49 @@
                         </div>
                         <div class="rounded-lg p-5 mt-5 md:mt-0" style="background: rgba(255, 255, 255, 0.6);">
                             <h1 class="font-bold text-lg md:text-2xl">1st MEMBER</h1>
-                            <input required name="firstnamalengkap"
+                            <input name="firstnamalengkap"
                                 class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="text"
                                 placeholder="Nama Lengkap" style="background: rgba(255, 255, 255, 0.6);">
-                            <select required name="firstgender"
+                            <select name="firstgender"
                                 class="border-2 border-black-500 rounded-md mt-2 w-full p-2"
                                 style="background: rgba(255, 255, 255, 0.6);">
                                 <option value="laki-laki">Laki-laki</option>
                                 <option value="perempuan">Perempuan</option>
                             </select>
-                            <input required name="firstemail"
+                            <input name="firstemail"
                                 class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="email"
                                 placeholder="Email" style="background: rgba(255, 255, 255, 0.6);">
-                            <input required name="firstalamat"
+                            <input name="firstalamat"
                                 class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="text"
                                 placeholder="Alamat" style="background: rgba(255, 255, 255, 0.6);">
-                            <input required name="firstkota"
+                            <input name="firstkota"
                                 class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="text"
                                 placeholder="Kota" style="background: rgba(255, 255, 255, 0.6);">
-                            <input required name="firstkodepos"
+                            <input name="firstkodepos"
                                 class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="tel"
                                 placeholder="Kode Pos" style="background: rgba(255, 255, 255, 0.6);">
-                            <input required name="firstnomorwa"
+                            <input name="firstnomorwa"
                                 class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="tel"
                                 placeholder="Nomor WA" style="background: rgba(255, 255, 255, 0.6);">
                         </div>
                         <div class="rounded-lg p-5 mt-5 md:mt-0" style="background: rgba(255, 255, 255, 0.6);">
                             <h1 class="font-bold text-lg md:text-2xl">2nd MEMBER</h1>
-                            <input required name="secondnamalengkap" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="text"
+                            <input name="secondnamalengkap" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="text"
                                 placeholder="Nama Lengkap" style="background: rgba(255, 255, 255, 0.6);">
-                            <select required name="secondgender" class="border-2 border-black-500 rounded-md mt-2 w-full p-2"
+                            <select name="secondgender" class="border-2 border-black-500 rounded-md mt-2 w-full p-2"
                                 style="background: rgba(255, 255, 255, 0.6);">
                                 <option value="laki-laki">Laki-laki</option>
                                 <option value="perempuan">Perempuan</option>
                             </select>
-                            <input required name="secondemail" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="email"
+                            <input name="secondemail" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="email"
                                 placeholder="Email" style="background: rgba(255, 255, 255, 0.6);">
-                            <input required name="secondalamat" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="text"
+                            <input name="secondalamat" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="text"
                                 placeholder="Alamat" style="background: rgba(255, 255, 255, 0.6);">
-                            <input required name="secondkota" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="text"
+                            <input name="secondkota" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="text"
                                 placeholder="Kota" style="background: rgba(255, 255, 255, 0.6);">
-                            <input required name="secondkodepos" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="tel"
+                            <input name="secondkodepos" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="tel"
                                 placeholder="Kode Pos" style="background: rgba(255, 255, 255, 0.6);">
-                            <input required name="secondnomorwa" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="tel"
+                            <input name="secondnomorwa" class="border-2 border-black-500 rounded-md mt-2 w-full p-2" type="tel"
                                 placeholder="Nomor WA" style="background: rgba(255, 255, 255, 0.6);">
                         </div>
                     </div>

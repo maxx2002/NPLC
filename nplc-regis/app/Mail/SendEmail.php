@@ -36,6 +36,6 @@ class SendEmail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('email.sendemail');
+        return $this->subject("9th NPLC")->markdown('email.sendemail');
     }
 }

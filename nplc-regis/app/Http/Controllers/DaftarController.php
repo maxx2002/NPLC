@@ -31,20 +31,6 @@ class DaftarController extends Controller
             'leaderkota' => 'required|min:1',
             'leaderkodepos' => 'required|min:1',
             'leadernomorwa' => 'required|min:1',
-            'firstnamalengkap' => 'required|min:1',
-            'firstgender' => 'required|min:1',
-            'firstemail' => 'required|min:1',
-            'firstalamat' => 'required|min:1',
-            'firstkota' => 'required|min:1',
-            'firstkodepos' => 'required|min:1',
-            'firstnomorwa' => 'required|min:1',
-            'secondnamalengkap' => 'required|min:1',
-            'secondgender' => 'required|min:1',
-            'secondemail' => 'required|min:1',
-            'secondalamat' => 'required|min:1',
-            'secondkota' => 'required|min:1',
-            'secondkodepos' => 'required|min:1',
-            'secondnomorwa' => 'required|min:1'
         ]);
 
         $schoolsize = $this->RegisterModel->lastIDSchool();
@@ -68,40 +54,79 @@ class DaftarController extends Controller
             $idtim = $this->RegisterModel->lastIDTeam()->id_tim + 1;
         }
         
-        $datamember = [
-            [
-                'id_tim' => $idtim,
-                'nama'=> Request()->leadernamalengkap,
-                'gender'=> Request()->leadergender,
-                'email'=> Request()->leaderemail,
-                'alamat'=> Request()->leaderalamat,
-                'kota'=> Request()->leaderkota,
-                'kode_pos'=> Request()->leaderkodepos,
-                'no_wa'=> Request()->leadernomorwa
-            ],
-
-            [
-                'id_tim' => $idtim,
-                'nama'=> Request()->firstnamalengkap,
-                'gender'=> Request()->firstgender,
-                'email'=> Request()->firstemail,
-                'alamat'=> Request()->firstalamat,
-                'kota'=> Request()->firstkota,
-                'kode_pos'=> Request()->firstkodepos,
-                'no_wa'=> Request()->firstnomorwa
-            ],
-
-            [
-                'id_tim' => $idtim,
-                'nama'=> Request()->secondnamalengkap,
-                'gender'=> Request()->secondgender,
-                'email'=> Request()->secondemail,
-                'alamat'=> Request()->secondalamat,
-                'kota'=> Request()->secondkota,
-                'kode_pos'=> Request()->secondkodepos,
-                'no_wa'=> Request()->secondnomorwa
-            ]
-        ];
+        if (Request()->firstnamalengkap == null) {
+            $datamember = [
+                [
+                    'id_tim' => $idtim,
+                    'nama'=> Request()->leadernamalengkap,
+                    'gender'=> Request()->leadergender,
+                    'email'=> Request()->leaderemail,
+                    'alamat'=> Request()->leaderalamat,
+                    'kota'=> Request()->leaderkota,
+                    'kode_pos'=> Request()->leaderkodepos,
+                    'no_wa'=> Request()->leadernomorwa
+                ],
+            ];
+        } else if (Request()->secondnamalengkap == null) {
+            $datamember = [
+                [
+                    'id_tim' => $idtim,
+                    'nama'=> Request()->leadernamalengkap,
+                    'gender'=> Request()->leadergender,
+                    'email'=> Request()->leaderemail,
+                    'alamat'=> Request()->leaderalamat,
+                    'kota'=> Request()->leaderkota,
+                    'kode_pos'=> Request()->leaderkodepos,
+                    'no_wa'=> Request()->leadernomorwa
+                ],
+    
+                [
+                    'id_tim' => $idtim,
+                    'nama'=> Request()->firstnamalengkap,
+                    'gender'=> Request()->firstgender,
+                    'email'=> Request()->firstemail,
+                    'alamat'=> Request()->firstalamat,
+                    'kota'=> Request()->firstkota,
+                    'kode_pos'=> Request()->firstkodepos,
+                    'no_wa'=> Request()->firstnomorwa
+                ],
+            ];
+        } else {
+            $datamember = [
+                [
+                    'id_tim' => $idtim,
+                    'nama'=> Request()->leadernamalengkap,
+                    'gender'=> Request()->leadergender,
+                    'email'=> Request()->leaderemail,
+                    'alamat'=> Request()->leaderalamat,
+                    'kota'=> Request()->leaderkota,
+                    'kode_pos'=> Request()->leaderkodepos,
+                    'no_wa'=> Request()->leadernomorwa
+                ],
+    
+                [
+                    'id_tim' => $idtim,
+                    'nama'=> Request()->firstnamalengkap,
+                    'gender'=> Request()->firstgender,
+                    'email'=> Request()->firstemail,
+                    'alamat'=> Request()->firstalamat,
+                    'kota'=> Request()->firstkota,
+                    'kode_pos'=> Request()->firstkodepos,
+                    'no_wa'=> Request()->firstnomorwa
+                ],
+    
+                [
+                    'id_tim' => $idtim,
+                    'nama'=> Request()->secondnamalengkap,
+                    'gender'=> Request()->secondgender,
+                    'email'=> Request()->secondemail,
+                    'alamat'=> Request()->secondalamat,
+                    'kota'=> Request()->secondkota,
+                    'kode_pos'=> Request()->secondkodepos,
+                    'no_wa'=> Request()->secondnomorwa
+                ]
+            ];
+        }
         
         $datatim = [
             'id_sekolah'=> $idsekolah,
@@ -167,6 +192,8 @@ class DaftarController extends Controller
 
         $count = $this->RegisterModel->allVerifiedTeam();
         Mail::to(Request()->leaderemail)->send(new SendEmail($team, $school, $leader, $member1, $member2, $count));
+        Mail::to(Request()->firstemail)->send(new SendEmail($team, $school, $leader, $member1, $member2, $count));
+        Mail::to(Request()->secondemail)->send(new SendEmail($team, $school, $leader, $member1, $member2, $count));
 
         return view('done');
     }
